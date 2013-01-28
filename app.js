@@ -132,5 +132,5 @@ rpn.prototype.toNumber = function() {
     throw new Error('stack has more than one entry');
   }
 
-  return this._stack[0];
+  return this._stack.pop();
 };

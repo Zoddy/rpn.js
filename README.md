@@ -25,7 +25,7 @@ var foo = rpn.calc('1 2 + 3 4 + *'); // rpn formula
 If you use the object-oriented calculation style, you have manually call `.toNumber()` to get the result. With the `calc`-function (formula-style) you will get the result directly.
 
 ## reset
-to empty the stack just call `rpn.reset()` to do so.
+to empty the stack just call `rpn.reset()` to do so. `.toNumber()` and `.calc()` will automatically reset the stack.
 
 ## operations
 - plus (+)
