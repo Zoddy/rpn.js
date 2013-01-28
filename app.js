@@ -16,9 +16,17 @@ var rpn = exports = module.exports = function() {
   this._stack = [];
 };
 
+
+/**
+ * add numbers to the stack and performs the right operation on them
+ *
+ * @param {array<number>} nums list of numbers to calculate with
+ * @param {function(nums)} operation function to perform the correct operation
+ * @return {object} just return myself
+ */
 rpn.prototype._add = function(nums, operation) {
   nums.forEach(function(num, index) {
-    var num = parseInt(num, 10);
+    num = parseInt(num, 10);
 
     if (isNaN(num) === true) {
       throw new Error('argument ' + index + ' is not a number');
@@ -42,8 +50,8 @@ rpn.prototype._add = function(nums, operation) {
  * @return {number} the result
  */
 rpn.prototype.calc = function(formula) {
-  var formula = formula.split(' '), // split by space
-      stack = []; // short time stack for single operations
+  var stack = []; // short time stack for single operations
+  formula = formula.split(' '), // split by space
 
   formula.forEach(function(part, index) {
     var numPart = parseInt(part, 10);
